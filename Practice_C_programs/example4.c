@@ -1,12 +1,14 @@
 #include <stdio.h>
-
-/** 
- * testing
+/**
+ * to test if C permits multiplication of integer and double
  */
 int main(void)
 {
-	char name[50];
-	printf("what is your name? ");
-	fgets(name, 50, stdin);
-	printf("Your name is: %s\n", name);
+	int a;
+	printf("Please input an integer value: ");
+	scanf("%d", &a);
+	double b;
+	printf("Please input a floating-point number: ");
+	scanf("%lf", &b);
+	printf("%d * %f = %4.2f\n", a, b, a * b);
 }
