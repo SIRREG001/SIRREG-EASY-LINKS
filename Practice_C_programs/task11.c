@@ -1,31 +1,27 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 /**
  * program that prints customer's banking data
  */
 
 int main(void)
 {
-	char name[100];
+	char name[100], account_number[50];
+	double averg_bal;
+	double interest;
+	int number_of_transactions;
+	double service_charge;
 	printf("Name? ");
-	gets(name);
-	printf("Name: %s\n", name);
-	char account_number[50];
+	fgets(name, 100, stdin);
 	printf("Account number? ");
-	gets(account_number);
-	printf("Account number: %s\n", account_number);
-	char averg_bal[50];
+	fgets(account_number, 50, stdin);
 	printf("Average Balance? ");
-	gets(averg_bal);
-	printf("Average Balance: $%7.2s\n", averg_bal);
-	char number_of_transactions[50];
+	scanf("$%lf", &averg_bal);
 	printf("Number of transactions? ");
-	gets(number_of_transactions);
-	char interest[50];
-	strcpy(interest, "averg_bal * 0.06");
-	printf("interest: $%s * 0.06 = $%7.2s\n", averg_bal, interest);
-	char service_charge[50];
-	strcpy(service_charge, "number_of_transactions * 50");
-	printf("Service charge: $%s * 50 = $%7.2s\n", number_of_transactions, service_charge);
+	scanf("%d", &number_of_transactions);
+	printf("Name: %s\n", name);
+	printf("Account number: %s\n", account_number);
+	printf("Average Balance: $%7.2f\n", averg_bal);
+	printf("interest: $%7.2f * 0.06 = $%2.2f\n", averg_bal, averg_bal * 0.06);
+	printf("Service charge: $%d * 0.50 = $%2.2f\n", number_of_transactions, number_of_transactions * 0.50);
 }
